@@ -8,7 +8,7 @@ import { Col, Row, Container, Card } from 'react-bootstrap';
 import { BASE_URL } from '../services/baseURL';
 import { useState } from 'react';
 import { removeFromCart } from '../redux/savedSlice';
-import nolistimg from '../images/giphy.gif'
+import nolistimg from '../images/cute-cat-bring-fish-with-trolley-cartoon-vector-icon-illustration-animal-nature-icon-isolated_138676-6068-removebg-preview.png'
 
 function Wishlist() {
 

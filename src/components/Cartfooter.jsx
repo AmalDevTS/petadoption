@@ -11,8 +11,7 @@ import logoimg from '../images/646-6464701_this-free-icons-png-design-of-dog-and
 
 
 
-
-function Footer() {
+function Cartfooter() {
 
   const form = useRef();
   const sendEmail = (e) => {
@@ -40,32 +39,32 @@ function Footer() {
  
 
   return (
-    <div className="footer-container bg-warning py-5 mt-5">
+    <div className="footer-container py-5 mt-5" style={{backgroundColor:"#4b1c81"}} >
       <Container>
         <Row className="justify-content-center align-items-center">
           <Col md={3}>
-            <Link to={'/'} className="text-decoration-none text-dark">
+            <Link to={'/'} className="text-decoration-none text-light">
               <h5 className="logo"><img src={logoimg} style={{width:"45px"}} alt="" /> Pet Nest</h5>
             </Link>
             <img src={catimage} style={{width:"80%"}} alt="Pet Nest Logo" className="logo-image img-fluid" />
           </Col>
 
           <Col md={3}>
-            <h4>Links</h4>
-            <Link to={'/'} className="text-decoration-none text-dark d-block mb-2">Home</Link>
-            <Link to={'/login'} className="text-decoration-none text-dark d-block mb-2">Login</Link>
-            <Link to={'/register'} className="text-decoration-none text-dark d-block mb-2">Register</Link>
+            <h4 style={{color:"white"}}>Links</h4>
+            <Link to={'/'} className="text-decoration-none text-light d-block mb-2">Home</Link>
+            <Link to={'/login'} className="text-decoration-none text-light d-block mb-2">Login</Link>
+            <Link to={'/register'} className="text-decoration-none text-light d-block mb-2">Register</Link>
           </Col>
 
           <Col md={3}>
-            <h4>Guides</h4>
-            <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' className="text-decoration-none text-dark d-block mb-2">React</a>
-            <a href='https://react-bootstrap.netlify.app/' target='_blank' rel='noopener noreferrer' className="text-decoration-none text-dark d-block mb-2">React Bootstrap</a>
-            <a href='https://bootswatch.com/' target='_blank' rel='noopener noreferrer' className="text-decoration-none text-dark d-block mb-2">Bootswatch</a>
+            <h4 style={{color:"white"}}>Guides</h4>
+            <a href='https://react.dev/' target='_blank' rel='noopener noreferrer' className="text-decoration-none text-light d-block mb-2">React</a>
+            <a href='https://react-bootstrap.netlify.app/' target='_blank' rel='noopener noreferrer' className="text-decoration-none text-light d-block mb-2">React Bootstrap</a>
+            <a href='https://bootswatch.com/' target='_blank' rel='noopener noreferrer' className="text-decoration-none text-light d-block mb-2">Bootswatch</a>
           </Col>
 
           <Col md={3}>
-            <h4>Contact us</h4>
+            <h4 style={{color:"white"}}>Contact us</h4>
             <Form ref={form} onSubmit={sendEmail}>
 
             <Form.Group className="mb-3">
@@ -79,11 +78,11 @@ function Footer() {
             <Form.Group className="mb-3">
               <Form.Control type="text" placeholder="Message" name='message'  />
             </Form.Group>
-            <Button style={{ backgroundColor: "#4b1c81", borderRadius: "20px", borderColor: "#4b1c81" }} variant="primary" type='submit' >Submit</Button>
+            <Button className='bg-warning text-black' style={{ borderColor: "#ffc107", borderRadius: "20px" }} variant="primary" type='submit' >Submit</Button>
 
             </Form>
             
-            <div className="social-icons mt-3">
+            <div style={{color:"white"}} className="social-icons mt-3">
               <i className="fab fa-facebook fa-2x me-3"></i>
               <i className="fab fa-linkedin fa-2x me-3"></i>
               <i className="fab fa-twitter fa-2x me-3"></i>
@@ -92,9 +91,9 @@ function Footer() {
           </Col>
         </Row>
       </Container>
-      <p className="text-center mt-3">Copyright &copy; 2024 Pet Nest. Built with React.</p>
+      <p style={{color:"white"}}  className="text-center mt-3">Copyright &copy; 2024 Pet Nest. Built with React.</p>
     </div>
   );
 }
 
-export default Footer
+export default Cartfooter;

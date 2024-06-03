@@ -10,6 +10,9 @@ import { addToCheckout } from '../redux/wishlistSlice';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import cartimg from '../images/shopping-bag.png'
+import heartimg from '../images/heart (1).png'
+
 
 function CartItems({ product, isLoggedIn }) {
   const dispatch = useDispatch();
@@ -31,7 +34,7 @@ function CartItems({ product, isLoggedIn }) {
     setHeartClicked(!isHeartClicked);
   };
 
- 
+
 
   const addToCart = () => {
     dispatch(addToCheckout(product));
@@ -43,13 +46,27 @@ function CartItems({ product, isLoggedIn }) {
     });
   };
 
+  const addtoWishlist = () => {
+    dispatch(addToWishlist(product));
+    Swal.fire({
+      icon: 'success',
+      title: 'Added to Wishlist!',
+      showConfirmButton: false,
+      timer: 1500
+    });
+    setHeartClicked(true);
+  };
+
+
+
+
   return (
     <div>
       <Container>
         <Row className='col-md-12 ms-2 mt-3'>
           <Col>
             <Card className="h-80 d-flex flex-column position-relative" style={{ height: "355px" }}>
-              
+
               <Card.Img
                 variant="top"
                 onClick={handleShow}
@@ -58,7 +75,7 @@ function CartItems({ product, isLoggedIn }) {
               />
               <div className="position-absolute top-0 end-0 mt-2 me-2" onClick={toggleHeart}>
                 {isHeartClicked ? (
-                  <i className="fa fa-heart"  style={{ color: 'red', fontSize: "23px", cursor: "pointer" }}></i>
+                  <i className="fa fa-heart" style={{ color: 'red', fontSize: "23px", cursor: "pointer" }}></i>
                 ) : (
                   <i className="far fa-heart" onClick={() => dispatch(addToWishlist(product))} style={{ color: 'black', fontSize: "23px", cursor: "pointer" }}></i>
                 )}
@@ -83,11 +100,12 @@ function CartItems({ product, isLoggedIn }) {
                 <Col md={8}>
                   <h3>{product.productname}</h3>
                   <p style={{ fontFamily: '"Signika negative", sans-serif' }}>Price: ₹{product.productprice}</p>
-                  <Button variant="primary" onClick={addToCart} style={{ borderRadius: "25px" }}>Add to Cart</Button>
-                  <Link to='/info'>
-                  <Button className='ms-3' onClick={() => dispatch(addToInfo(product))}  variant="success" style={{ borderRadius: "25px" }}>Buy it now</Button>
+                  <Button  onClick={addtoWishlist} variant="outline-danger" style={{ borderRadius: "25px" }}><i className="fa fa-heart" style={{  fontSize: "20px", cursor: "pointer" }}></i> Wishlist</Button>
 
-                  </Link>
+                  <Button className='ms-3' variant="primary" onClick={addToCart} style={{ borderRadius: "25px" }}> <img className='mb-1' src={cartimg} style={{ width: "20px" }} alt="" /> Add to Cart</Button>
+
+
+
                   <hr />
                   <h5>Description:</h5>
                   <p>{product.productinfo}</p>

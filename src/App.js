@@ -1,10 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
-import Footer from './components/Footer';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Auth from './pages/Auth';
-import Header from './components/Header'
 import Main from './pages/Main';
 import Fav from './pages/Fav';
 import Donate from './pages/Donate';
@@ -35,9 +32,11 @@ function App() {
 
 
 
+
+
       </Routes>
      
-      <Footer/>
+    
       
     </div>
   );

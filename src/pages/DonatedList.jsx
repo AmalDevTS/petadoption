@@ -4,7 +4,7 @@ import { Modal,Button } from 'react-bootstrap';
 import { BASE_URL } from '../services/baseURL';
 import { deleteProjectApi } from '../services/allAPI';
 import Swal from 'sweetalert2';
-import loadingimg from '../images/FIGURE-057058_01.jpg'
+import loadingimg from '../images/cute-shiba-inu-dog-super-hero-cartoon-vector-icon-illustration-animal-holiday-icon-concept-isolated_138676-7106-removebg-preview.png'
 
 
 
@@ -125,7 +125,7 @@ function DonatedList() {
     </div>
                     )) :
                     <div>
-          <img src={loadingimg} alt="" style={{ width: '400px', display: 'block', margin: 'auto' }} />
+          <img className='mt-5' src={loadingimg} alt="" style={{ width: '300px', display: 'block', margin: 'auto' }} />
           <h3 className='text-danger mt-4' style={{ width: '400px', margin: 'auto', textAlign: 'center'}} >No list to show</h3>
 
           </div>

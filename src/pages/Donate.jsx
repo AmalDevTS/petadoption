@@ -40,7 +40,7 @@ function Donate() {
             
         }
         else{
-            //for uploading filess we have to send data as formdata
+            //for uploading files we have to send data as formdata
             //content type is multipart/form data
             const reqBody= new FormData();
             reqBody.append('petname',petname)

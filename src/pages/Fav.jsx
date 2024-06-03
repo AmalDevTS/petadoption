@@ -7,7 +7,7 @@ import { Button } from 'react-bootstrap';
 import { removeFromWishlist } from '../redux/savedSlice';
 import { useState } from 'react';
 import { Modal } from 'react-bootstrap';
-import loadingimg from '../images/animated-happy-corgi-zubckdo4g8cw5t6j.gif'
+import loadingimg from '../images/cats and dog.png'
 
 
 function Fav() {
@@ -91,20 +91,13 @@ function Fav() {
                     </div>
                   </div>
                 </Modal.Body>
-                <Modal.Footer>
-                  <Button variant="secondary" onClick={handleClose}>
-                    Close
-                  </Button>
-                  <Button variant="primary" onClick={handleClose}>
-                    Save Changes
-                  </Button>
-                </Modal.Footer>
+                
               </Modal>
             </div>
           ))
         ) : (
           <div>
-          <img src={loadingimg} alt="" style={{ width: '400px', display: 'block', margin: 'auto' }} />
+          <img src={loadingimg} alt="" style={{ width: '300px', display: 'block', margin: 'auto' }} />
           <h3 className='text-danger mt-4' style={{ width: '400px', margin: 'auto', textAlign: 'center'}} >No Favourite list</h3>
 
           </div>

@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import headerimage from '../images/8458719_3865689-02.jpeg.jpg';
 import { Link } from 'react-router-dom';
+import Footer from '../components/Footer';
+
 
 function Home() {
   return (
@@ -38,6 +40,7 @@ function Home() {
           </Col>
         </Row>
       </Container>
+      <Footer/>
     </div>
   );
 }

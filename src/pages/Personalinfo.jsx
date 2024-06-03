@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { TextField, Button, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 import logo from '../images/Colored Pet Shop Collie Dog.png';
 import { useSelector } from 'react-redux';
+import { addProjectResponseContext } from '../context/ContextShare';
+import Cartfooter from '../components/Cartfooter';
 
 function PersonalInfo() {
 
+    const { addProjectResponse, setAddProjectResponse } = useContext(addProjectResponseContext);
+
+
     const savedlistCart = useSelector((state) => state.savedListReducer);
 
+
+
     const openRazorpayGateway = (product) => {
+        const totalPrice = addProjectResponse
         const options = {
             key: 'rzp_test_vfY9TRGMaus8oT',
-            amount: product.productprice * 100,
+            amount: totalPrice * 100, 
             currency: 'INR',
             name: 'Pet Nest',
             description: 'Payment for ' + product.productname,
@@ -20,7 +28,7 @@ function PersonalInfo() {
                 alert('Payment successful: ' + response.razorpay_payment_id);
             }
         };
-
+    
         try {
             const rzp = new window.Razorpay(options);
             rzp.open();
@@ -29,6 +37,9 @@ function PersonalInfo() {
             alert('An error occurred while processing the payment. Please try again later.');
         }
     };
+    
+    
+    
 
     return (
         <>
@@ -124,6 +135,9 @@ function PersonalInfo() {
                     </form>
                 </Grid>
             </Grid>
+
+
+            <Cartfooter/>
 
         </>
     );

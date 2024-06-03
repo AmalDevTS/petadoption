@@ -8,6 +8,8 @@ import kart from '../images/shopping-cart (1).png'
 import heart from '../images/heart.png'
 import loadingimg from '../images/pet-jumping-20210422 (1).gif'
 import buttonimg from '../images/superman.png'
+import Footer from '../components/Footer';
+import logoimg from '../images/646-6464701_this-free-icons-png-design-of-dog-and.png'
 
 
 function Main() {
@@ -66,7 +68,7 @@ function Main() {
         <div>
             <nav className="navbar" style={{ backgroundColor: "#fbab05" }}>
                 <div className="container-fluid">
-                    <a className="navbar-brand"><i className="fas fa-paw me-2"></i>Pet Nest</a>
+                    <a className="navbar-brand"><img src={logoimg} style={{width:"50px"}} alt="" /> Pet Nest</a>
                     <form className="d-flex me-auto ms-5" role="search">
                         <input className="form-control me-2"
                             onChange={(e) => setSearchKey(e.target.value)}
@@ -113,6 +115,7 @@ function Main() {
 
                 }
             </div>
+            <Footer/>
         </div>
     );
 }
